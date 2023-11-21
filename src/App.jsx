@@ -9,9 +9,10 @@ import { auth } from "./firebase/firebase";
 import Home from "./Pages/Home";
 import Login from "./Pages/Auth";
 import { fetchItems } from "./Redux/itemsSlice";
+import ChartDisplay from "./Pages/ChartDisplay";
+
 
 export default function App() {
-
   const { user } = useSelector((state) => state.user);
   const { uid } = useSelector((state) => state.user.user);
   const items = useSelector((state) => state.itemsSlice.data);
@@ -28,7 +29,7 @@ export default function App() {
       let obj = { displayName, uid };
       dispatch(updateLoginState(obj));
     });
-    getData()
+    getData();
   }, [uid]);
 
   return (
@@ -39,6 +40,7 @@ export default function App() {
           path="/"
           element={uid == "" ? <Landing></Landing> : <Home></Home>}
         ></Route>
+        <Route path="/chart" element={<ChartDisplay/>}></Route>
         <Route path="/register" element={<Login register></Login>}></Route>
         <Route path="/auth" element={<Login></Login>}></Route>
       </Routes>

@@ -117,6 +117,13 @@ export default function Modal({ show, setShow, itemData }) {
     }
   };
 
+  const getToday = () => {
+    const date1 = new Date();
+    let today =
+      date1.getMonth() + 1 + "/" + date1.getDate() + "/" + date1.getFullYear();
+    return today;
+  };
+
   return (
     <div
       className="fixed -inset-y-20 inset-x-0 z-10 overflow-y-auto"
@@ -186,10 +193,10 @@ export default function Modal({ show, setShow, itemData }) {
                   </select>
                   <input
                     type="date"
-                    value={date}
+                    value={date ? date : getToday()}
                     onChange={(e) => setDate(e.target.value)}
                     className="appearance-none border border-blue-100 rounded px-4 py-3 mt-1 block  outline-none focus:border-blue-500 w-64  max-w-[420px]"
-                    placeholder="Search A Transaction..."
+                    placeholder="Date"
                   />
                 </form>
               </div>

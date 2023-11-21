@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const user = useSelector((state) => state.user.user);
@@ -26,7 +27,7 @@ const Dashboard = () => {
   }, [forDashboard]);
 
   return (
-    <div className="w-screen h-60 bg-indigo-600 p-3 md:p-4 flex flex-col md:flex-row md:gap-14 items-center md:justify-center">
+    <div className="w-screen h-64 bg-indigo-600 p-3 md:p-4 flex flex-col md:flex-row md:gap-14 items-center md:justify-center">
       <h1 className="text-white text-center md:text-start text-3xl font-bold md:self-center md:text-6xl">
         Welcome {user.displayName}
       </h1>
@@ -60,6 +61,13 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
+        <div className="w-screen text-center">
+          <Link to="/chart">
+            <button className="bg-slate-100 my-3 px-4 py-2 rounded-lg text-indigo-600 font-bold">
+              View spending for this month
+            </button>
+          </Link>
+        </div>{" "}
       </div>
     </div>
   );
