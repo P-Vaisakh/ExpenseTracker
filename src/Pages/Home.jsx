@@ -5,7 +5,7 @@ import TransactionList from "../Components/TransactionList";
 
 const Home = () => {
   return (
-    <div className="overflow-x-hidden">
+    <div className="">
       <Dashboard></Dashboard>
       <SearchAndAdd></SearchAndAdd>
       <TransactionList></TransactionList>

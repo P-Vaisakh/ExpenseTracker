@@ -57,11 +57,11 @@ const ChartDisplay = () => {
   const options = {};
 
   return (
-    <div className="px-5 py-5">
+    <div className="px-5 py-5 h-screen max-h-screen">
       <h1 className="text-indigo-700 text-4xl text-center font-bold mb-8">
         Expense for this month
       </h1>
-      <Line data={charData} options={options}></Line>
+      <Line data={charData} options={options} style={{height:"70%",width:"70%", maxHeight:"70%" , maxWidth:"100%", alignSelf:"center"}}></Line>
     </div>
   );
 };

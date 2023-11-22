@@ -27,11 +27,11 @@ const Dashboard = () => {
   }, [forDashboard]);
 
   return (
-    <div className="w-screen h-64 bg-indigo-600 p-3 md:p-4 flex flex-col md:flex-row md:gap-14 items-center md:justify-center">
-      <h1 className="text-white text-center md:text-start text-3xl font-bold md:self-center md:text-6xl">
+    <div className="w-[100%]  h-64 bg-indigo-600 p-3 md:p-4 flex flex-col md:flex-row md:gap-14 items-center md:justify-center overflow-hidden">
+      <h1 className="text-white text-center md:text-right text-3xl font-bold  md:text-6xl flex-1">
         Welcome {user.displayName}
       </h1>
-      <div className="py-5 md:items-start">
+      <div className="py-5  flex-1 md:max-w-[50%]">
         <div className="text-center md:text-left">
           <h1 className="text-gray-50 text-opacity-90 text-2xl">
             Account Balance :{" "}
@@ -61,7 +61,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div className="w-screen text-center">
+        <div className=" text-center md:text-start">
           <Link to="/chart">
             <button className="bg-slate-100 my-3 px-4 py-2 rounded-lg text-indigo-600 font-bold">
               View spending for this month
